@@ -1,0 +1,240 @@
+@sand: #8c8076;
+@dark-sand: #544c46;
+@light-sand-2: #dcd7d4;
+@font-size-base: 12px;
+@font-size-small: ceil((@font-size-base * 0.85)); // ~11px
+@normal-font-weight: normal;
+@border-color: @light-sand-2;
+@light-blue-hover: #dae2e2;
+
+@light-green-1: #849d7a;
+@light-green-2: #a8baa1;
+
+@button-blue: #99afaf;
+@button-blue-hover: #899d9d;
+@button-icon-blue: #425460;
+//@dark-blue-2: #5b6f74;
+
+
+
+.dl-admin-container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.dl-company-profile {
+    margin: 10px;
+    padding-top: 5px;
+    position: relative;
+
+    &:hover {
+        background-color: @light-blue-hover;
+        .dl-company-edit-profile {
+            display: block;
+        }
+    }
+
+    .row::before {
+        display: none;
+    }
+
+    .label {
+        color: @sand;
+        text-align: right;
+        text-transform: uppercase;
+        font-size: @font-size-small;
+        padding-top: 2px;
+        padding-bottom: 5px;
+        font-weight: @normal-font-weight;
+    }
+
+    .data {
+        color: @dark-sand;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        text-transform: none;
+        font-size: @font-size-base;
+        margin-top: 0 !important;
+        padding-left: 0.4em;
+        font-weight: @normal-font-weight;
+        padding-bottom: 5px;
+    }
+}
+.dl-company-edit-profile {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    z-index: 1;
+    display:none;
+    
+}
+.dl-company-profile-edit-icon {
+    background-image: url(../images/xtra-small-icons.svg);
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    cursor: pointer
+}
+.dl-admin-buttons-section {
+    padding: 6px 6px 3px 0px;
+    text-align: right;
+}
+.dl-blue-icon-button-layout {
+    display: inline-flex;
+    font-size: 11px;
+    line-height: 1.5;
+    min-width: 80px;
+    height: 28px;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: @button-blue;
+    align-items: center;
+    margin-left: 6px;
+
+    &:hover {
+        background-color: @button-blue-hover;
+        cursor: pointer;
+    }
+
+    span:nth-child(2) {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+.dl-blue-button-icon {
+    background-image: url(../images/delogue-small-icon.svg);
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    background-color: @button-icon-blue;
+}
+.dl-hidden-icon {
+    background-position: -180px -250px;
+}
+
+.dl-green-icon-button-layout {
+    display: inline-flex;
+    font-size: 11px;
+    line-height: 1.5;
+    min-width: 80px;
+    height: 28px;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #849d7a;
+    align-items: center;
+    margin-left: 6px;
+
+    &:hover {
+        background-color: #6c8e68;
+        cursor: pointer;
+    }
+
+    span:nth-child(2) {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+.dl-green-button-icon {
+    background-image: url(../images/delogue-small-icon.svg);
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    background-color: #364734;
+
+    
+}
+.dl-plus-icon {
+    background-position: -90px -221px;
+}
+.dl-company-profile-image {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    border: 1px solid @border-color;
+    position: relative;
+
+    &:hover {
+        .dl-company-profile-edit-delete-buttons {
+            visibility: visible;
+        }
+    }
+
+    img {
+        max-height: 78px;
+        max-width: 78px;
+    }
+}
+.dl-company-profile-edit-delete-buttons {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: space-around;
+    visibility: hidden;
+}
+.dl-company-logo-edit-button {
+    background-image: url(../images/delogue-small-icon.svg);
+    background-position: -60px -250px;
+    cursor: pointer;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+}
+.dl-company-logo-delete-button {
+    background-image: url(../images/delogue-small-icon.svg);
+    background-position: -90px -250px !important;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+}
+.dl-admin-company-info-table {
+    flex: 1;
+    overflow: auto;
+}
+
+.dl-right-checkbox-block {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 1px solid @border-color;
+    padding: 0px 5px 10px 0px;
+
+    div {
+        padding-right: 5px;
+    }
+}
+
+#dl-checkbox-trigger {
+    display: none;
+}
+
+.dl-checker {
+    background-image: url(images/checkbox-icons.svg);
+    background-position: left center;
+    background-size: auto 100%;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+}
+
+#dl-checkbox-trigger:checked + .checker {
+    background-position: right center;
+}
+

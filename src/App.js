@@ -1,14 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import './delogue.less'
-import { homedir } from 'os';
+import './bootstrap.min.css'
+import './bootstrap-theme.min.css'
 import Home from './Home'
 
 function App() {
-  return (
-    <Home/>
-  );
+    return (
+        <Home />
+    );
 }
 
 export default App;
